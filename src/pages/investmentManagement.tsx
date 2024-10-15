@@ -91,7 +91,7 @@ export function InvestmentManagement() {
                     Multi-Asset Portfolio
                     </HeroHeader>
                     <HeroSubheader>
-                      Our four distinct hubs comprise the management of a diversified portfolio across all major asset classes with a clear regional focus in Europe and Asia 
+                      Our five distinct hubs comprise the management of a diversified portfolio across all major asset classes with a clear regional focus in Europe and Asia 
                     </HeroSubheader>
                 </HeroContentContainer>
             </Container>
