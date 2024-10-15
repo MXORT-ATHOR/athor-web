@@ -56,21 +56,20 @@ const ContentContainer = styled.div`
 `
 
 const ContentTitle = styled.h2`
-    color: black;
-    font-family: Inter;
-    font-size: 60px;
-    font-weight: 700;
+    color: #202124;
+    font-size: 50px;
+    font-weight: 500;
     margin: 10px 0;
 
 `
 
 const ContentText = styled.p`
-    color: black;
-    font-family: Inter;
-    font-size: 18px;
-    font-weight: 400;
-    font-height: 3;
+    color: #202124CF;
+    font-family: Spline Sans;
+    font-size: 20px;
+    font-weight: 300;
 
+    width: 30vw;
 `
 
 export function OperationBusiness() {
