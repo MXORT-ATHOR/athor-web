@@ -176,13 +176,10 @@ export function Layout() {
                 Article 49 of the FPO; or (iii) any other persons to whom such a financial promotion may be lawfully made.
             </p>
             <div>
-                <b>Impressum</b>
+                <NavLink to="/impressum"><b>Impressum</b></NavLink>
             </div>
             <br/>
             <br/>
-            <div>
-                <b>Contact Us</b>
-            </div>
             <div style={{margin: "24px 0", color: "#0a142f", fontWeight: 400}}>
                 © 2024 Athor Holding GmbH & Co KG. All rights reserved. 
             </div>

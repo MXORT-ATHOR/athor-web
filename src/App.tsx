@@ -11,6 +11,7 @@ import AOS from "aos";
 import 'aos/dist/aos.css';
 import { RealAsset } from './pages/realAssets';
 import { About } from './pages/about';
+import Impressum from './pages/impressum';
 
 function App() {
   useEffect(() => {
@@ -25,6 +26,7 @@ function App() {
         <Route path='investment-management' element={<InvestmentManagement />} />
         <Route path='real-asset' element={<RealAsset />} />
         <Route path='about' element={<About />} />
+        <Route path='impressum' element={<Impressum />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
