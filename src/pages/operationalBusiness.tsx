@@ -67,8 +67,9 @@ const ContentTitle = styled.h2`
 const ContentText = styled.p`
     color: black;
     font-family: Inter;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 400;
+    font-height: 3;
 
 `
 
@@ -139,7 +140,7 @@ export function OperationBusiness() {
                         Trade Advisory
                     </ContentTitle>
                     <ContentText>
-                        Our Athor Trade Advisory engages in co operations with international partners on an advisory basis addressing issues such as country specific logistics, product homologations and distributions
+                        Our Athor Trade Advisory engages in cooperations with international partners on an advisory basis addressing issues such as country specific logistics, product homologations and distributions
                     </ContentText>
                 </div>
                 <div style={{marginLeft: 90}}>

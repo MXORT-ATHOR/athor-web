@@ -86,15 +86,7 @@ export function Home() {
                     <source src="/homas/vid.mp4" type="video/mp4" />
                 </video>
                 <HeroContentContainer>
-                    <HeroHeader>
-                        Expertise in Pan-Eurasian<br />
-                        Trading and Trade-Finance
-                    </HeroHeader>
-                    <HeroSubheader>
-                        Our international trading structure combines of<br/>
-                        experience within the trade, distribution, and<br/>
-                        financing of commodities
-                    </HeroSubheader>
+                   
                 </HeroContentContainer>
             </Container>
             <ContentContainer
@@ -134,7 +126,7 @@ export function Home() {
                     marginTop: 24
                 }}>
                     <ImageCountry
-                        imgUrl="/homas/spain.png"
+                        imgUrl="/homas/spain.jpeg"
                         data-aos="fade-left"
                         data-aos-offset="100"
                         data-aos-easing="ease-in"

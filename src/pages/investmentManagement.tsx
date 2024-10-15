@@ -63,7 +63,7 @@ const ContentContainer = styled.div`
 
 const ContentTitle = styled.h2`
     color: #202124;
-    font-size: 40px;
+    font-size: 50px;
     font-weight: 500;
     margin: 10px 0;
 
@@ -72,7 +72,7 @@ const ContentTitle = styled.h2`
 const ContentText = styled.p`
     color: #202124CF;
     font-family: Spline Sans;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 300;
 
     width: 30vw;
@@ -114,8 +114,8 @@ export function InvestmentManagement() {
                       display: 'flex',
                       gap: 16
                     }}>
-                      <img src="athor/holding.png" height={50} alt="holding" />
-                      <img src="athor/management.png" height={50} alt="management" />
+                      <img src="athor/holding.png" height={100} alt="holding" />
+                      <img src="athor/management.png" height={80} alt="management" />
                     </div>
                 </div>
             </ContentContainer>
@@ -138,7 +138,7 @@ export function InvestmentManagement() {
                       display: 'flex',
                       gap: 16
                     }}>
-                      <img src="athor/sglim.png" height={50} alt="sg lim" />
+                      <img src="athor/sglim.png" height={80} alt="sg lim" />
                     </div>
                 </div>
             </ContentContainer>
@@ -161,7 +161,7 @@ export function InvestmentManagement() {
                       display: 'flex',
                       gap: 16
                     }}>
-                      <img src="athor/switz.png" height={50} alt="holding" />
+                      <img src="athor/switz.png" height={80} alt="holding" />
                     </div>
                 </div>
             </ContentContainer>
@@ -184,7 +184,7 @@ export function InvestmentManagement() {
                       display: 'flex',
                       gap: 16
                     }}>
-                      <img src="athor/real.png" height={50} alt="real" />
+                      <img src="athor/real.png" height={80} alt="real" />
                     </div>
                 </div>
             </ContentContainer>
@@ -199,7 +199,7 @@ export function InvestmentManagement() {
                         Turkey
                     </ContentTitle>
                     <ContentText>
-                    As Europe's frontier market, our Spanish office not only takes on a supporting role within our operational business but represents a significant proportion of Athor Group's real estate investments
+                    Acting as a bridge between Europe and Asia, our Turkish subsidiary deals with a variety of trade related activities such as logistics, distribution across continents
                     </ContentText>
                     <br />
                     <br />
@@ -207,7 +207,7 @@ export function InvestmentManagement() {
                       display: 'flex',
                       gap: 16
                     }}>
-                      <img src="athor/nova.png" height={50} alt="nova" />
+                      <img src="athor/nova.png" height={80} alt="nova" />
                     </div>
                 </div>
             </ContentContainer>

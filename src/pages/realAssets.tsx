@@ -93,6 +93,7 @@ export function RealAsset() {
                     <p
                         style={{
                             fontWeight: '400',
+                            fontSize: '1.6vw',
                             font: 'Spline Sans',
                             color: '#717171'
                         }}
@@ -113,7 +114,7 @@ export function RealAsset() {
                     data-aos-offset="100"
                     data-aos-easing="ease-in"
                     data-aos-delay="100"
-                    height={70} src="/athor/real.png" alt="athor real" />
+                    height={90} src="/athor/real.png" alt="athor real" />
                 </div>
                 <div
                     data-aos="fade-up"
@@ -127,9 +128,9 @@ export function RealAsset() {
                         backgroundPosition: "center",
                         backgroundSize: "contain",
                         backgroundRepeat: "no-repeat",
-                        right: "-20vw",
+                        right: "-30vw",
                         top: "3vw",
-                        bottom: "-10vw",
+                        bottom: "-20vw",
                     }}
                 />
             </div>

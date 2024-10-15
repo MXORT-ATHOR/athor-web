@@ -187,7 +187,7 @@ export function About() {
             Walter Ortner
           </h3>
           <h4 style={{ fontSize: "1.2vw", color: "#6B7280" }}>
-            Managing Director - Athor Management GmbH
+          Managing Director - Athor Management GmbH
           </h4>
           <p style={{ fontSize: "1vw", color: "#4D4D4D" }}>
             At Athor Group, Walter’s responsibilities encompass oversight of the
@@ -231,14 +231,10 @@ export function About() {
             Karl Walter Veigl
           </h3>
           <h4 style={{ fontSize: "1.2vw", color: "#6B7280" }}>
-            Managing Director - Athor Real GmbH
+          Managing Director - Athor Management GmbH
           </h4>
           <p style={{ fontSize: "1vw", color: "#4D4D4D" }}>
-            Before joining the Athor Group, Karl has been in charge of several
-            infrastructure and business development projects of the Siemens
-            Group within both Eurasia and continental Europe. He brings with him
-            decades of expertise within the metallurgical sector and a vast
-            network of suppliers, supply chains and distribution.
+          Before joining the Athor Group, Karl has been in charge of several infrastructure and business development projects of the Siemens Group within both Eurasia and continental Europe. He brings with him decades of expertise within the metallurgical sector and a vast network of suppliers, supply chains and distribution.
           </p>
         </div>
       </div>
@@ -274,16 +270,10 @@ export function About() {
             Maximilian Ortner
           </h3>
           <h4 style={{ fontSize: "1.2vw", color: "#6B7280" }}>
-            Managing Director - Athor Real GmbH
+          Managing Director - Athor Real GmbH
           </h4>
           <p style={{ fontSize: "1vw", color: "#4D4D4D" }}>
-            At the head of the Athor Group, Walter’s responsibilities encompass
-            oversight of the group’s subsidiaries through several directorships,
-            managing the group’s European investments and holding a managerial
-            role within our operational trading business. Walter counts more
-            than 30 years of experience within the international trade of
-            primary and secondary goods across Europe, Asia, Africa and the
-            Middle East.
+          Maximilian is an experienced asset manager with a strong focus on Public Markets and Venture Capital. He has been active within the Fintech and Venture Capital space working for Germany’s biggest Fintech Bank N26 before transitioning into the Wealth Management space at UBS. He holds a MSc in Venture Creation from the National University of Singapore and BSc in Management from ESCP Business School. 
           </p>
         </div>
       </div>
