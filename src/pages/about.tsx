@@ -92,7 +92,7 @@ export function About() {
           Karl Reisinger
         </h3>
         <p style={{ fontSize: "1vw", color: "#4D4D4D" }}>
-          Member of Board of Trustees - Ahtor Foundation
+          Member of Board of Trustees - Athor Foundation
         </p>
       </div>
 
@@ -117,7 +117,7 @@ export function About() {
           Wolfgang Leitner
         </h3>
         <p style={{ fontSize: "1vw", color: "#4D4D4D" }}>
-          Member of Board of Trustees & Authorized Representative - Ahtor
+          Member of Board of Trustees & Authorized Representative - Athor
           Foundation
         </p>
       </div>
@@ -143,7 +143,7 @@ export function About() {
           Andreas Lemp
         </h3>
         <p style={{ fontSize: "1vw", color: "#4D4D4D" }}>
-          Member of Board of Trustees - Ahtor Foundation
+          Member of Board of Trustees - Athor Foundation
         </p>
       </div>
             </div>
