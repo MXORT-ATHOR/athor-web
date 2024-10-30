@@ -26,25 +26,6 @@ const HeroContentContainer = styled.div`
 
 `
 
-const HeroHeader = styled.h1`
-    color: white;
-    font-weight: 500;
-    font-size: 5vw;
-    margin: 10px 0;
-    text-shadow: -3px 10px 30px black;
-`
-
-const HeroSubheader = styled.h2`
-    text-align: left;
-    color: white;
-    font-family: Spline Sans;
-    font-size: 3vw;
-    font-weight: 300;
-    margin: 10px 0;
-    text-shadow: -3px 10px 30px black;
-
-`
-
 const ContentContainer = styled.div`
     padding: 180px 80px;
 `

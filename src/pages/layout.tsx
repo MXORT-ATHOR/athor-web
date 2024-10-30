@@ -3,6 +3,9 @@ import { NavLink, Outlet, useLocation } from "react-router-dom";
 import styled from "styled-components";
 
 const HeaderContainer = styled.div`
+    @media (max-width: 768px) {
+        display: none;
+    }
     width: 100%;
     background: white;
     text-align: center;
@@ -10,6 +13,121 @@ const HeaderContainer = styled.div`
     position: sticky;
     top: 0;
     z-index: 10;
+`
+
+const MobileHeaderContainer = styled.div`
+    @media (min-width: 768px) {
+        display: none;
+    }
+    display: flex;
+    padding: 18px 28px;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background: white;
+    text-align: center;
+    margin-bottom: 2px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+`
+
+const Hamburger = styled.div`
+    padding: 8px;
+    display: block;
+    position: relative;
+    
+    z-index: 1;
+    
+    -webkit-user-select: none;
+    user-select: none;
+
+    input {
+        display: block;
+        width: 40px;
+        height: 32px;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        
+        cursor: pointer;
+        
+        opacity: 0; /* hide this */
+        z-index: 2; /* and place it over the hamburger */
+        
+        -webkit-touch-callout: none;
+    }
+
+    span {
+        display: block;
+        width: 33px;
+        height: 4px;
+        margin-bottom: 5px;
+        position: relative;
+        
+        background: #353840;
+        border-radius: 3px;
+        
+        z-index: 1;
+        
+        transform-origin: 4px 0px;
+        
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+            background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+            opacity 0.55s ease;
+    }
+
+    span:first-child
+    {
+        transform-origin: 0% 0%;
+    }
+
+    span:nth-last-child(2)
+    {
+        transform-origin: 0% 100%;
+    }
+
+    input:checked ~ span
+    {
+        opacity: 1;
+        transform: rotate(45deg) translate(-2px, -1px);
+        background: #232323;
+    }
+
+    input:checked ~ span:nth-last-child(3)
+    {
+        opacity: 0;
+        transform: rotate(0deg) scale(0.2, 0.2);
+    }
+
+    input:checked ~ span:nth-last-child(2)
+    {
+        transform: rotate(-45deg) translate(0, -1px);
+    }
+
+    & input:checked ~ ul
+    {
+        transform: none;
+    }
+`
+
+const MobileMenu = styled.ul`
+    position: absolute;
+    width: 60vw;
+    right: -100%;
+    top: 51px;
+    padding: 50px;
+    padding-top: 125px;
+    
+    background: #fbfbfb;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    /* to stop flickering of text in safari */
+    
+    transform-origin: 0% 0%;
+    transform: translate(100%, 0);
+    
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
 `
 
 const Logo = styled.img`
@@ -113,7 +231,7 @@ export function Layout() {
             document.title = "Athor Privatstiftung"
             return;
         }
-        console.log(activeTabIndex)
+
         document.title = `${navLinkList[activeTabIndex].title} | Athor Privatstiftung`
 
         const setTabPosition = () => {
@@ -162,6 +280,36 @@ export function Layout() {
             </Nav>
             <ActiveUnderline $left={tabUnderlineLeft} $width={tabUnderlineWidth} />
         </HeaderContainer>
+
+        <MobileHeaderContainer>
+            <NavLink to="/">
+                <img src="logo.png" alt="Athor Privatstiftung" height={50} />
+            </NavLink>
+            <Hamburger>
+                <input type="checkbox" />
+
+                <span/>
+                <span/>
+                <span/>
+
+                <MobileMenu>
+                    {navLinkList.map((o, index) => (
+                        <li>
+                            <StyledLink
+                                key={index}
+                                ref={(el) => (tabsRef.current[index] = el)}
+                                onClick={() => setActiveTabIndex(index)}
+                                to={o.url}
+                            >
+                                {o.title}
+                            </StyledLink>
+
+                        </li>
+                    ))}
+                </MobileMenu>
+            </Hamburger>
+
+        </MobileHeaderContainer>
 
         <Outlet />
 
