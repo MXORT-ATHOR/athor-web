@@ -100,7 +100,7 @@ const navLinkList = [
 export function Layout() {
     const tabsRef = useRef<(HTMLElement | null)[]>([]);
     const loc = useLocation();
-    const [activeTabIndex, setActiveTabIndex] = useState<number | null>(null);
+    const [activeTabIndex, setActiveTabIndex] = useState<number>(-1);
     const [tabUnderlineWidth, setTabUnderlineWidth] = useState(0);
     const [tabUnderlineLeft, setTabUnderlineLeft] = useState(0);
 
@@ -109,9 +109,12 @@ export function Layout() {
     }, [loc.pathname]);
 
     useEffect(() => {
-        if (activeTabIndex === null) {
-        return;
+        if (activeTabIndex === -1) {
+            document.title = "Athor Privatstiftung"
+            return;
         }
+        console.log(activeTabIndex)
+        document.title = `${navLinkList[activeTabIndex].title} | Athor Privatstiftung`
 
         const setTabPosition = () => {
             window.scrollTo(0,0)
@@ -125,7 +128,7 @@ export function Layout() {
 
     useLayoutEffect(() => {
         const updateSize = () => {
-            if (activeTabIndex == null) {
+            if (activeTabIndex === -1) {
                 return
             }
             const currentTab = tabsRef.current[activeTabIndex] as HTMLElement;
@@ -140,7 +143,7 @@ export function Layout() {
     return (<div>
         <HeaderContainer>
             <NavLink to="/" onClick={() => {
-                setTabUnderlineLeft(0)
+                setTabUnderlineLeft(-1)
                 setTabUnderlineWidth(0)
             }}>
                 <Logo src="logo.png" alt="Athor Privatstiftung" />
@@ -176,7 +179,14 @@ export function Layout() {
                 Article 49 of the FPO; or (iii) any other persons to whom such a financial promotion may be lawfully made.
             </p>
             <div>
-                <NavLink to="/impressum"><b>Impressum</b></NavLink>
+                <NavLink to="/impressum" onClick={() => {
+                    window.scrollTo(0,0)
+                    setTabUnderlineLeft(-1)
+                    setTabUnderlineWidth(0)
+                    setActiveTabIndex(-1)
+                }}>
+                    <b>Impressum</b>
+                </NavLink>
             </div>
             <br/>
             <br/>
