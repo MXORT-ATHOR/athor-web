@@ -107,7 +107,7 @@ const Impressum = () => {
             )}
             {company.companyRegisterSpain && (
               <p style={{ fontSize: "1vw", color: "#000" }}> {/* Changed to black */}
-                <strong>Company Register Austria: </strong>{company.companyRegisterSpain}
+                <strong>Company Register Spain: </strong>{company.companyRegisterSpain}
               </p>
             )}
             {company.companyRegisterAustria && (

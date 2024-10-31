@@ -2,10 +2,10 @@ import styled from "styled-components";
 
 const Container = styled.div`
     width: 100vw;
-    position: relative;
     height: calc(100vh - 170px);
+    position: relative;
 
-    video {
+    img, video {
         object-fit: cover;
         width: 100%;
         height: 100%;
@@ -24,29 +24,28 @@ const HeroContentContainer = styled.div`
     justify-content: center;
     align-items: center;
     overflow: hidden;
-
-`
-
-const HeroHeader = styled.h1`
     text-align: center;
+`;
+const HeroHeader = styled.h1`
     color: white;
     font-weight: 500;
     font-size: 4vw;
     margin: 10px 0;
-    text-shadow: -3px 10px 40px black;
-`
+    text-align: center;  /* Center-align the text */
+    text-shadow: -3px 10px 40px rgba(0, 0, 0, 0.7);
+`;
 
 const HeroSubheader = styled.h2`
-    text-align: center;
     color: white;
-    font-family: Spline Sans;
+    font-family: 'Spline Sans', sans-serif;
     font-size: 2vw;
     font-weight: 400;
     margin: 10px 0;
-    text-shadow: -3px 10px 20px black;
+    text-align: center;  /* Center-align the text */
+    text-shadow: -3px 10px 20px rgba(0, 0, 0, 0.5);
     max-width: 50vw;
+`;
 
-`
 
 const ContentContainer = styled.div`
     padding: 80px 80px;
@@ -54,161 +53,115 @@ const ContentContainer = styled.div`
     gap: 50px;
     align-items: center;
     justify-content: start;
+    flex-wrap: wrap;
 
     > img {
       width: 40vw;
+      max-width: 600px;
       aspect-ratio: 6 / 4;
+      border-radius: 12px;
     }
-`
+`;
 
 const ContentTitle = styled.h2`
     color: #202124;
-    font-size: 50px;
+    font-size: 2.5vw;
     font-weight: 500;
     margin: 10px 0;
-
-`
+`;
 
 const ContentText = styled.p`
     color: #202124CF;
-    font-family: Spline Sans;
-    font-size: 20px;
+    font-family: 'Spline Sans', sans-serif;
+    font-size: 1.2vw;
     font-weight: 300;
+    max-width: 30vw;
+`;
 
-    width: 30vw;
-`
+const IconContainer = styled.div`
+    display: flex;
+    gap: 16px;
+
+    img {
+        height: 80px;
+        object-fit: contain;
+    }
+`;
 
 export function InvestmentManagement() {
     return (
         <div>
             <Container data-aos="fade-up">
-                <video autoPlay muted loop id="video">
-                    <source src="/invma/vid.mp4" type="video/mp4" />
-                </video>
+                <img src="/invma/hero.gif" alt="Hero Background" />
                 <HeroContentContainer>
                     <HeroHeader>
-                    Managing a Global<br/>
-                    Multi-Asset Portfolio
+                        Managing a Global<br/>
+                        Multi-Asset Portfolio
                     </HeroHeader>
                     <HeroSubheader>
-                      Our five distinct hubs comprise the management of a diversified portfolio across all major asset classes with a clear regional focus in Europe and Asia 
+                        Our five distinct hubs comprise the management of a diversified portfolio across all major asset classes with a clear regional focus in Europe and Asia.
                     </HeroSubheader>
                 </HeroContentContainer>
             </Container>
-            <ContentContainer
-                data-aos="fade-up"
-                data-aos-offset="400"
-                data-aos-easing="ease-in"
-            >
-                <img src={"/invma/austria.png"} alt="rmz - austria" />
+            <ContentContainer data-aos="fade-up" data-aos-offset="400" data-aos-easing="ease-in">
+                <img src={"/invma/austria.png"} alt="Austria" />
                 <div>
-                    <ContentTitle>
-                        Austria
-                    </ContentTitle>
+                    <ContentTitle>Austria</ContentTitle>
                     <ContentText>
-                      Our Austrian Headquarter with offices in both Vienna and Linz is the center of our trading activity and the group's largest investment fund with a focus on European Public and Private Equities
+                        Our Austrian Headquarters, with offices in both Vienna and Linz, is the center of our trading activity and the group's largest investment fund with a focus on European Public and Private Equities.
                     </ContentText>
-                    <br />
-                    <br />
-                    <div style={{
-                      display: 'flex',
-                      gap: 16
-                    }}>
-                      <img src="athor/holding.png" height={100} alt="holding" />
-                      <img src="athor/management.png" height={80} alt="management" />
-                    </div>
+                    <IconContainer>
+                        <img src="athor/holding.png" alt="Holding" />
+                        <img src="athor/management.png" alt="Management" />
+                    </IconContainer>
                 </div>
             </ContentContainer>
-            <ContentContainer
-                data-aos="fade-up"
-                data-aos-offset="300"
-                data-aos-easing="ease-in"
-            >
-                <img src={"/invma/sg.png"} alt="rmz - singapore" />
+            <ContentContainer data-aos="fade-up" data-aos-offset="300" data-aos-easing="ease-in">
+                <img src={"/invma/sg.png"} alt="Singapore" />
                 <div>
-                    <ContentTitle>
-                        Singapore
-                    </ContentTitle>
+                    <ContentTitle>Singapore</ContentTitle>
                     <ContentText>
-                        Our Singapore branch was created with the intention of diversifying our portfolio across Asia-Pacific focusing on Equity investments in both developed and emerging markets
+                        Our Singapore branch was created with the intention of diversifying our portfolio across Asia-Pacific, focusing on equity investments in both developed and emerging markets.
                     </ContentText>
-                    <br />
-                    <br />
-                    <div style={{
-                      display: 'flex',
-                      gap: 16
-                    }}>
-                      <img src="athor/sglim.png" height={80} alt="sg lim" />
-                    </div>
+                    <IconContainer>
+                        <img src="athor/sglim.png" alt="SG Lim" />
+                    </IconContainer>
                 </div>
             </ContentContainer>
-            <ContentContainer
-                data-aos="fade-up"
-                data-aos-offset="300"
-                data-aos-easing="ease-in"
-            >
-                <img src={"/invma/switz.png"} alt="rmz - switzerland" />
+            <ContentContainer data-aos="fade-up" data-aos-offset="300" data-aos-easing="ease-in">
+                <img src={"/invma/switz.png"} alt="Switzerland" />
                 <div>
-                    <ContentTitle>
-                        Switzerland
-                    </ContentTitle>
+                    <ContentTitle>Switzerland</ContentTitle>
                     <ContentText>
-                        Switzerland with its internationally renown image of stability and financial security serves as a strategic safe haven for the Athor Group’s investments, especially with regards to currency and commodity markets
+                        Switzerland, with its internationally renowned image of stability and financial security, serves as a strategic safe haven for the Athor Group’s investments, particularly in currency and commodity markets.
                     </ContentText>
-                    <br />
-                    <br />
-                    <div style={{
-                      display: 'flex',
-                      gap: 16
-                    }}>
-                      <img src="athor/switz.png" height={80} alt="holding" />
-                    </div>
+                    <IconContainer>
+                        <img src="athor/switz.png" alt="Switzerland Icon" />
+                    </IconContainer>
                 </div>
             </ContentContainer>
-            <ContentContainer
-                data-aos="fade-up"
-                data-aos-offset="300"
-                data-aos-easing="ease-in"
-            >
-                <img src={"/invma/spain.png"} alt="rmz - spain" />
+            <ContentContainer data-aos="fade-up" data-aos-offset="300" data-aos-easing="ease-in">
+                <img src={"/invma/spain.png"} alt="Spain" />
                 <div>
-                    <ContentTitle>
-                        Spain
-                    </ContentTitle>
+                    <ContentTitle>Spain</ContentTitle>
                     <ContentText>
-                    As Europe's frontier market, our Spanish office not only takes on a supporting role within our operational business but represents a significant proportion of Athor Group's real estate investments
+                        As Europe's frontier market, our Spanish office not only supports our operational business but represents a significant portion of Athor Group's real estate investments.
                     </ContentText>
-                    <br />
-                    <br />
-                    <div style={{
-                      display: 'flex',
-                      gap: 16
-                    }}>
-                      <img src="athor/real.png" height={80} alt="real" />
-                    </div>
+                    <IconContainer>
+                        <img src="athor/real.png" alt="Real Estate" />
+                    </IconContainer>
                 </div>
             </ContentContainer>
-            <ContentContainer
-                data-aos="fade-up"
-                data-aos-offset="300"
-                data-aos-easing="ease-in"
-            >
-                <img src={"/invma/turkey.png"} alt="rmz - turkey" />
+            <ContentContainer data-aos="fade-up" data-aos-offset="300" data-aos-easing="ease-in">
+                <img src={"/invma/turkey.png"} alt="Turkey" />
                 <div>
-                    <ContentTitle>
-                        Turkey
-                    </ContentTitle>
+                    <ContentTitle>Turkey</ContentTitle>
                     <ContentText>
-                    Acting as a bridge between Europe and Asia, our Turkish subsidiary deals with a variety of trade related activities such as logistics, distribution across continents
+                        Acting as a bridge between Europe and Asia, our Turkish subsidiary handles various trade-related activities such as logistics and distribution across continents.
                     </ContentText>
-                    <br />
-                    <br />
-                    <div style={{
-                      display: 'flex',
-                      gap: 16
-                    }}>
-                      <img src="athor/nova.png" height={80} alt="nova" />
-                    </div>
+                    <IconContainer>
+                        <img src="athor/nova.png" alt="Nova" />
+                    </IconContainer>
                 </div>
             </ContentContainer>
         </div>

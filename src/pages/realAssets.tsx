@@ -22,34 +22,43 @@ const HeroContentContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: end;
+    align-items: center;
     overflow: hidden;
     background: url("/reas/hero.png");
     background-position: center;
     background-size: cover;
 
 `
-
 const HeroHeader = styled.h1`
-    text-align: right;
+    text-align: center;
     color: white;
     font-weight: 500;
     font-size: 4vw;
     margin: 10px 0;
-    text-shadow: -3px 10px 40px black;
-`
+    /* Dense layered shadow for background effect */
+    text-shadow: 
+         0px  0px 15px rgba(0, 0, 0, 0.7),
+         0px  0px 30px rgba(0, 0, 0, 0.5);
+`;
 
 const HeroSubheader = styled.h2`
-    text-align: right;
+    text-align: center;
     color: white;
-    font-family: Spline Sans;
+    font-family: 'Spline Sans', sans-serif;
     font-size: 2vw;
     font-weight: 300;
     margin: 10px 0;
-    text-shadow: -3px 10px 40px black;
     max-width: 40vw;
+    /* Dense layered shadow for background effect */
+    text-shadow: 
+         0px  0px 15px rgba(0, 0, 0, 0.7),
+         0px  0px 35px rgba(0, 0, 0, 0.8),
+         0px  0px 40px rgba(0, 0, 0, 0.9),
+         0px  0px 25px rgba(0, 0, 0, 0.7),
+         0px  0px 30px rgba(0, 0, 0, 0.8),
+         0px  0px 45px rgba(0, 0, 0, 0.9);
+`;
 
-`
 
 export function RealAsset() {
     return (

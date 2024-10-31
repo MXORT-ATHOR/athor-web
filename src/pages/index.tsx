@@ -83,7 +83,7 @@ export function Home() {
         <div>
             <Container data-aos="fade-up">
                 <video autoPlay muted loop id="video">
-                    <source src="/homas/vid.mp4" type="video/mp4" />
+                    <source src="/homas/home.mp4" type="video/mp4" />
                 </video>
                 <HeroContentContainer>
                    
