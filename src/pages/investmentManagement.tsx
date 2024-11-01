@@ -91,8 +91,8 @@ const IconContainer = styled.div`
 export function InvestmentManagement() {
     return (
         <div>
-            <Container data-aos="fade-up">
-                <img src="/invma/hero.gif" alt="Hero Background" />
+             <Container data-aos="fade-up">
+                <video src="/invma/hero.mp4" autoPlay loop muted />
                 <HeroContentContainer>
                     <HeroHeader>
                         Managing a Global<br/>
