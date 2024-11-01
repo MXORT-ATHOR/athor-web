@@ -22,7 +22,7 @@ const HeroContentContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: end;
     overflow: hidden;
     background: url("/reas/hero.png");
     background-position: center;
@@ -30,7 +30,7 @@ const HeroContentContainer = styled.div`
 
 `
 const HeroHeader = styled.h1`
-    text-align: center;
+    text-align: right;
     color: white;
     font-weight: 500;
     font-size: 4vw;
@@ -42,7 +42,7 @@ const HeroHeader = styled.h1`
 `;
 
 const HeroSubheader = styled.h2`
-    text-align: center;
+    text-align: right;
     color: white;
     font-family: 'Spline Sans', sans-serif;
     font-size: 2vw;
