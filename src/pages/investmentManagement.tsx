@@ -10,6 +10,9 @@ const Container = styled.div`
         width: 100%;
         height: 100%;
     }
+    @media (max-width: 768px) {
+        height: 100vh; /* Reduce height on smaller screens */
+    }
 `;
 
 const HeroContentContainer = styled.div`
@@ -25,14 +28,33 @@ const HeroContentContainer = styled.div`
     align-items: center;
     overflow: hidden;
     text-align: center;
+
+    @media (max-width: 768px) {
+        width: 90vw;
+        padding: 16px;
+        align-items: center;
+        text-align: center;
+    }
 `;
+
 const HeroHeader = styled.h1`
     color: white;
     font-weight: 500;
     font-size: 4vw;
     margin: 10px 0;
-    text-align: center;  /* Center-align the text */
+    text-align: center;
     text-shadow: -3px 10px 40px rgba(0, 0, 0, 0.7);
+    @media (max-width: 768px) {
+        font-size: 8vw;
+        text-align: center;
+        text-shadow: 
+         0px  0px 15px rgba(0, 0, 0, 0.7),
+         0px  0px 35px rgba(0, 0, 0, 0.8),
+         0px  0px 40px rgba(0, 0, 0, 0.9),
+         0px  0px 25px rgba(0, 0, 0, 0.7),
+         0px  0px 30px rgba(0, 0, 0, 0.8),
+         0px  0px 45px rgba(0, 0, 0, 0.9);
+    }
 `;
 
 const HeroSubheader = styled.h2`
@@ -41,11 +63,21 @@ const HeroSubheader = styled.h2`
     font-size: 2vw;
     font-weight: 400;
     margin: 10px 0;
-    text-align: center;  /* Center-align the text */
+    text-align: center;
     text-shadow: -3px 10px 20px rgba(0, 0, 0, 0.5);
     max-width: 50vw;
+    @media (max-width: 768px) {
+        font-size: 5vw;
+        text-align: center;
+        text-shadow: 
+         0px  0px 15px rgba(0, 0, 0, 0.7),
+         0px  0px 35px rgba(0, 0, 0, 0.8),
+         0px  0px 40px rgba(0, 0, 0, 0.9),
+         0px  0px 25px rgba(0, 0, 0, 0.7),
+         0px  0px 30px rgba(0, 0, 0, 0.8),
+         0px  0px 45px rgba(0, 0, 0, 0.9);
+    }
 `;
-
 
 const ContentContainer = styled.div`
     padding: 80px 80px;
@@ -61,6 +93,22 @@ const ContentContainer = styled.div`
       aspect-ratio: 6 / 4;
       border-radius: 12px;
     }
+
+    @media (max-width: 768px) {
+        flex-direction: row; /* Ensure left-right layout on smaller screens */
+        justify-content: center;
+        padding: 30px 10px 10px 10px;
+        text-align: left;
+
+        > img {
+            order: 1; /* Ensure the image stays on the left */
+            margin-right: 20px;
+        }
+
+        > div {
+            order: 2; /* Ensure the text stays on the right */
+        }
+    }
 `;
 
 const ContentTitle = styled.h2`
@@ -68,6 +116,9 @@ const ContentTitle = styled.h2`
     font-size: 2.5vw;
     font-weight: 500;
     margin: 10px 0;
+    @media (max-width: 768px) {
+        font-size: 26px; /* Smaller font size for smaller screens */
+    }
 `;
 
 const ContentText = styled.p`
@@ -76,6 +127,11 @@ const ContentText = styled.p`
     font-size: 1.2vw;
     font-weight: 300;
     max-width: 30vw;
+
+    @media (max-width: 768px) {
+        width: 100%; /* Full width for smaller screens */
+        font-size: 14px; /* Slightly smaller font size */
+    }
 `;
 
 const IconContainer = styled.div`
@@ -103,7 +159,8 @@ export function InvestmentManagement() {
                     </HeroSubheader>
                 </HeroContentContainer>
             </Container>
-            <ContentContainer data-aos="fade-up" data-aos-offset="400" data-aos-easing="ease-in">
+            
+            <ContentContainer data-aos="fade-up" data-aos-offset="300" data-aos-easing="ease-in">
                 <img src={"/invma/austria.png"} alt="Austria" />
                 <div>
                     <ContentTitle>Austria</ContentTitle>
@@ -116,6 +173,7 @@ export function InvestmentManagement() {
                     </IconContainer>
                 </div>
             </ContentContainer>
+
             <ContentContainer data-aos="fade-up" data-aos-offset="300" data-aos-easing="ease-in">
                 <img src={"/invma/sg.png"} alt="Singapore" />
                 <div>
@@ -128,6 +186,7 @@ export function InvestmentManagement() {
                     </IconContainer>
                 </div>
             </ContentContainer>
+
             <ContentContainer data-aos="fade-up" data-aos-offset="300" data-aos-easing="ease-in">
                 <img src={"/invma/switz.png"} alt="Switzerland" />
                 <div>
@@ -140,6 +199,7 @@ export function InvestmentManagement() {
                     </IconContainer>
                 </div>
             </ContentContainer>
+
             <ContentContainer data-aos="fade-up" data-aos-offset="300" data-aos-easing="ease-in">
                 <img src={"/invma/spain.png"} alt="Spain" />
                 <div>
@@ -152,6 +212,7 @@ export function InvestmentManagement() {
                     </IconContainer>
                 </div>
             </ContentContainer>
+
             <ContentContainer data-aos="fade-up" data-aos-offset="300" data-aos-easing="ease-in">
                 <img src={"/invma/turkey.png"} alt="Turkey" />
                 <div>

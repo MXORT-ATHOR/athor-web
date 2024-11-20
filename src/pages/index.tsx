@@ -10,7 +10,20 @@ const Container = styled.div`
         width: 100%;
         height: 100%;
     }
+        @media (max-width: 768px) {
+    height: 28vh; /* Increase height */
+    margin: 0; /* Remove unnecessary margins */
+    padding: 0; /* Remove unnecessary padding */
+    video {
+        height: 100%; /* Ensure video fully fills */
+    }
+    HeroContentContainer {
+        display: none; /* Remove empty container if unused */
+    }
+}
+
 `;
+
 
 const HeroContentContainer = styled.div`
     position: absolute;
@@ -24,7 +37,11 @@ const HeroContentContainer = styled.div`
     justify-content: center;
     overflow: hidden;
 
-`
+    @media (max-width: 768px) {
+        width: 90vw;
+        padding: 16px 40px;
+    }
+`;
 
 const HeroHeader = styled.h1`
     color: white;
@@ -32,7 +49,11 @@ const HeroHeader = styled.h1`
     font-size: 5vw;
     margin: 10px 0;
     text-shadow: -3px 10px 30px black;
-`
+
+    @media (max-width: 768px) {
+        font-size: 7vw;
+    }
+`;
 
 const HeroSubheader = styled.h2`
     text-align: left;
@@ -43,11 +64,20 @@ const HeroSubheader = styled.h2`
     margin: 10px 0;
     text-shadow: -3px 10px 30px black;
 
-`
+    @media (max-width: 768px) {
+        font-size: 5vw;
+    }
+`;
 
 const ContentContainer = styled.div`
     padding: 180px 80px;
-`
+    font-size: 36px;
+
+    @media (max-width: 768px) {
+        padding: 40px 20px;
+        font-size: 14px;
+    }
+`;
 
 const ContentTitle = styled.h2`
     color: white;
@@ -57,16 +87,22 @@ const ContentTitle = styled.h2`
     margin: 10px 80px;
     text-shadow: -3px 10px 40px black;
 
-`
+    @media (max-width: 768px) {
+        font-size: 40px;
+
+        margin: 10px 20px;
+    }
+`;
 
 const ImageCountry = styled.div<{
-    imgUrl: string
+    imgUrl: string;
 }>`
-    background: url(${props => props.imgUrl});
+    background: url(${(props) => props.imgUrl});
     background-size: cover;
     background-position: center;
-    aspect-ratio: 3 / 2;
-    flex-grow: 1;
+    aspect-ratio: 3 / 2; /* Default aspect ratio for desktop */
+    flex-shrink: 0; /* Prevent shrinking when inline */
+    width: calc(33.33% - 16px); /* Ensure three items fit inline with a gap */
 
     h4 {
         color: white;
@@ -76,7 +112,17 @@ const ImageCountry = styled.div<{
         margin: 10px 30px;
         text-shadow: -3px 10px 40px black;
     }
-`
+
+    @media (max-width: 768px) {
+        aspect-ratio: 1 / 1; /* Square aspect ratio for mobile */
+        width: calc(100% / 3 - 16px); /* Fit three images inline */
+        h4 {
+            font-size: 20px;
+            margin: 10px 10px;
+        }
+    }
+`;
+
 
 export function Home() {
     return (
@@ -86,21 +132,23 @@ export function Home() {
                     <source src="/homas/home.mp4" type="video/mp4" />
                 </video>
                 <HeroContentContainer>
-                   
                 </HeroContentContainer>
             </Container>
+
             <ContentContainer
                 data-aos="fade-up"
                 data-aos-offset="400"
                 data-aos-easing="ease-in"
             >
                 <p
-                    style={{fontSize: 33, fontWeight: "400", textAlign: "center"}}
+                    style={{ fontWeight: "400", textAlign: "center"}}
                 >
                     With expertise in international trade as the pillar of our business, the Athor Group positions itself as a multi-regional investment office working within our close network of trusted business partners in Europe and Asia Pacific
                 </p>
             </ContentContainer>
+
             <div style={{backgroundColor: "#ababab", height: 1, margin: "0 80px"}}></div>
+
             <ContentContainer>
                 <div
                     data-aos="fade-up"
@@ -113,7 +161,7 @@ export function Home() {
                         backgroundSize: "cover",
                         backgroundPosition: "center",
                         position: "relative"
-                }}>
+                    }}>
                     <ContentTitle style={{
                         position: "absolute",
                         bottom: 20
@@ -123,7 +171,8 @@ export function Home() {
                     display: "flex",
                     width: "100%",
                     gap: "24px",
-                    marginTop: 24
+                    marginTop: 24,
+                    flexWrap: "wrap"
                 }}>
                     <ImageCountry
                         imgUrl="/homas/spain.jpeg"
@@ -131,10 +180,9 @@ export function Home() {
                         data-aos-offset="100"
                         data-aos-easing="ease-in"
                     >
-                        <h4>
-                            Spain
-                        </h4>
+                        <h4>Spain</h4>
                     </ImageCountry>
+
                     <ImageCountry
                         imgUrl="/homas/singapore.png"
                         data-aos="fade-left"
@@ -142,10 +190,9 @@ export function Home() {
                         data-aos-easing="ease-in"
                         data-aos-delay="100"
                     >
-                        <h4>
-                            Singapore
-                        </h4>
+                        <h4>Singapore</h4>
                     </ImageCountry>
+
                     <ImageCountry
                         imgUrl="/homas/switzerland.png"
                         data-aos="fade-left"
@@ -153,9 +200,7 @@ export function Home() {
                         data-aos-easing="ease-in"
                         data-aos-delay="200"
                     >
-                        <h4>
-                            Switzerland
-                        </h4>
+                        <h4>Switzerland</h4>
                     </ImageCountry>
                 </div>
             </ContentContainer>
