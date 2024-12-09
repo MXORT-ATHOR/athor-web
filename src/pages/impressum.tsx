@@ -71,7 +71,7 @@ const Impressum = () => {
   useEffect(() => {
     AOS.init();
   }, []);
-
+  
   const companies = [
     {
       logo: "athor/holding.png",
@@ -80,6 +80,7 @@ const Impressum = () => {
       email: "office.real@athor.org",
       phone: "+43 059303250",
       companyRegister: "FN482037d",
+      lei: "529900APAZNNDQR80398",
     },
     {
       logo: "athor/management.png",
@@ -87,6 +88,8 @@ const Impressum = () => {
       address: "Samhaberstrasse 40, 4040 Linz, Austria",
       companyRegister: "FN265553w",
       uid: "ATU61844366",
+      lei: "5299002TM20WNEYXR113",
+
     },
     {
       logo: "athor/handel.jpeg",
@@ -94,6 +97,8 @@ const Impressum = () => {
       address: "Samhaberstrasse 40, 4040 Linz, Austria",
       companyRegister: "FN211089a",
       uid: "ATU52098705",
+      lei: "529900771KHP0A1IU382",
+
     },
     {
       logo: "athor/real.png",
@@ -101,6 +106,7 @@ const Impressum = () => {
       address: "Samhaberstrasse 40, 4040 Linz, Austria",
       companyRegisterAustria: "FN481473z",
       companyRegisterSpain: "NIF N0275430G",
+      lei:"529900V914T3QKKG3871"
     },
     {
       logo: "athor/sglim.png",
@@ -167,6 +173,12 @@ const Impressum = () => {
               <Text>
                 <strong>Company Register Singapore: </strong>
                 {company.companyRegisterSingapore}
+              </Text>
+            )}
+            {company.lei && (
+              <Text>
+                <strong>LEI Number: </strong>
+                {company.lei}
               </Text>
             )}
           </Details>

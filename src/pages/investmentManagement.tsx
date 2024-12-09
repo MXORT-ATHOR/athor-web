@@ -95,9 +95,15 @@ const ContentContainer = styled.div`
     }
 
     @media (max-width: 768px) {
+    > img {
+      width: 60vw;
+      margin-top: 20px;
+      aspect-ratio: 2 / 1;
+      border-radius: 12px;
+    }
         flex-direction: row; /* Ensure left-right layout on smaller screens */
         justify-content: center;
-        padding: 30px 10px 10px 10px;
+        padding: 10px 10px 10px 10px;
         text-align: left;
 
         > img {
@@ -130,7 +136,9 @@ const ContentText = styled.p`
 
     @media (max-width: 768px) {
         width: 100%; /* Full width for smaller screens */
-        font-size: 14px; /* Slightly smaller font size */
+        font-size: 13px; /* Slightly smaller font size */
+        max-width: 80vw;
+
     }
 `;
 
@@ -142,6 +150,7 @@ const IconContainer = styled.div`
         height: 80px;
         object-fit: contain;
     }
+        
 `;
 
 export function InvestmentManagement() {

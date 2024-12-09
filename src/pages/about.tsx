@@ -23,7 +23,16 @@ const BoardContainer = styled.div`
         font-size: 24px; /* Adjust height for smaller screens */
     }
 `;
-
+const ContentTitle = styled.h2`
+    color: #202124;
+    text-align: center;
+    font-size: 2.5vw;
+    font-weight: 500;
+    margin: 20px 0;
+    @media (max-width: 768px) {
+        font-size: 26px; /* Smaller font size for smaller screens */
+    }
+`;
 // Hero Content Container Styles
 const HeroContentContainer = styled.div`
     position: absolute;
@@ -169,11 +178,16 @@ export function About() {
                     </HeroSubheader>
                 </HeroContentContainer>
             </Container>
-
+            <div 
+            style={{
+                    margin: "50px 0px 0px 0px", /* Adjust padding for mobile */
+        }}
+                    >
+            <ContentTitle>Board of Trustees</ContentTitle>
             <div
                 style={{
                     position: "relative",
-                    padding: "80px 20px", /* Adjust padding for mobile */
+                    padding: "20px 20px", /* Adjust padding for mobile */
                     display: "flex",
                     justifyContent: "space-between",
                     flexWrap: "wrap", /* Allow items to wrap on smaller screens */
@@ -181,6 +195,7 @@ export function About() {
                 }}
             >
                 {/* First Trustee */}
+                
                 <TrusteeCard data-aos="fade-right" data-aos-offset="100" data-aos-easing="ease-in" data-aos-delay="100">
                     <TrusteeName>Karl Reisinger</TrusteeName>
                     <TrusteeDescription>Member of Board of Trustees - Athor Foundation</TrusteeDescription>
@@ -198,17 +213,20 @@ export function About() {
                     <TrusteeDescription>Member of Board of Trustees - Athor Foundation</TrusteeDescription>
                 </TrusteeCard>
             </div>
+            </div>
 
             <BoardContainer>
                 <div
                     style={{
                         position: "relative",
-                        padding: "80px 20px", /* Adjust padding for mobile */
+                        padding: "40px 20px", /* Adjust padding for mobile */
                         display: "flex",
                         flexDirection: "column",
                         gap: "50px",
                     }}
                 >
+                <ContentTitle>Management</ContentTitle>
+
                     {/* Walter Ortner */}
                     <TrusteeInfoContainer>
                         <TrusteeImage src="abot/walter.png" alt="Walter Ortner" />

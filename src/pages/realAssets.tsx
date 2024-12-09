@@ -111,6 +111,10 @@ const SectionText = styled.p`
     font-size: 1.6vw;
     font-family: 'Spline Sans', sans-serif;
     color: #717171;
+     @media (max-width: 768px) {
+        font-size: 2vw;
+
+    }
 `;
 const Image = styled.img`
     height: 90px;
