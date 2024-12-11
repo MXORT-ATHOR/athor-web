@@ -11,8 +11,13 @@ const Container = styled.div`
         height: 100%;
     }
 
-    @media (max-width: 768px) {
-        height: 100vh; /* Adjust height for mobile */
+   @media (max-width: 768px) {
+        height: 28vh; /* Increase height */
+        margin: 0; /* Remove unnecessary margins */
+        padding: 0; /* Remove unnecessary padding */
+        video {
+            height: 100%; /* Ensure video fully fills */
+        }
     }
 `;
 
@@ -50,7 +55,7 @@ const HeroHeader = styled.h1`
          0px  0px 30px rgba(0, 0, 0, 0.5);
 
     @media (max-width: 768px) {
-        font-size: 8vw;
+        font-size: 7vw;
         text-align: center;
         text-shadow: 
          0px  0px 15px rgba(0, 0, 0, 0.7),
@@ -79,9 +84,16 @@ const HeroSubheader = styled.h2`
          0px  0px 45px rgba(0, 0, 0, 0.9);
 
     @media (max-width: 768px) {
-        font-size: 5vw;
+        font-size: 4vw;
         text-align: center;
         max-width: 90%;
+        text-shadow: 
+         0px  0px 15px rgba(0, 0, 0, 0.7),
+         0px  0px 35px rgba(0, 0, 0, 0.8),
+         0px  0px 40px rgba(0, 0, 0, 0.9),
+         0px  0px 25px rgba(0, 0, 0, 0.7),
+         0px  0px 30px rgba(0, 0, 0, 0.8),
+         0px  0px 45px rgba(0, 0, 0, 0.9);
     }
 `;
 

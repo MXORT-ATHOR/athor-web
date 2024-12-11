@@ -117,7 +117,7 @@ const ImageCountry = styled.div<{
         aspect-ratio: 1 / 1; /* Square aspect ratio for mobile */
         width: calc(100% / 3 - 16px); /* Fit three images inline */
         h4 {
-            font-size: 20px;
+            font-size: 18px;
             margin: 10px 10px;
         }
     }
@@ -135,10 +135,8 @@ export function Home() {
                 </HeroContentContainer>
             </Container>
 
-            <ContentContainer
-                data-aos="fade-up"
-                data-aos-offset="400"
-                data-aos-easing="ease-in"
+            <ContentContainer data-aos="fade-up"
+               
             >
                 <p
                     style={{ fontWeight: "400", textAlign: "center"}}

@@ -10,8 +10,13 @@ const Container = styled.div`
         width: 100%;
         height: 100%;
     }
-    @media (max-width: 768px) {
-        height: 100vh; /* Reduce height on smaller screens */
+       @media (max-width: 768px) {
+        height: 28vh; /* Increase height */
+        margin: 0; /* Remove unnecessary margins */
+        padding: 0; /* Remove unnecessary padding */
+        video {
+            height: 100%; /* Ensure video fully fills */
+        }
     }
 `;
 
@@ -45,7 +50,7 @@ const HeroHeader = styled.h1`
     text-align: center;
     text-shadow: -3px 10px 40px rgba(0, 0, 0, 0.7);
     @media (max-width: 768px) {
-        font-size: 8vw;
+        font-size: 7vw;
         text-align: center;
         text-shadow: 
          0px  0px 15px rgba(0, 0, 0, 0.7),
@@ -67,7 +72,7 @@ const HeroSubheader = styled.h2`
     text-shadow: -3px 10px 20px rgba(0, 0, 0, 0.5);
     max-width: 50vw;
     @media (max-width: 768px) {
-        font-size: 5vw;
+        font-size: 4vw;
         text-align: center;
         text-shadow: 
          0px  0px 15px rgba(0, 0, 0, 0.7),
@@ -104,7 +109,7 @@ const ContentContainer = styled.div`
         flex-direction: row; /* Ensure left-right layout on smaller screens */
         justify-content: center;
         padding: 10px 10px 10px 10px;
-        text-align: left;
+        text-align: center;
 
         > img {
             order: 1; /* Ensure the image stays on the left */

@@ -12,7 +12,12 @@ const Container = styled.div`
     }
 
     @media (max-width: 768px) {
-        height: 100vh; /* Adjust height for mobile */
+        height: 28vh; /* Increase height */
+        margin: 0; /* Remove unnecessary margins */
+        padding: 0; /* Remove unnecessary padding */
+        video {
+            height: 100%; /* Ensure video fully fills */
+        }
     }
 `;
 
@@ -45,7 +50,7 @@ const HeroHeader = styled.h1`
     text-shadow: -3px 10px 40px black;
 
       @media (max-width: 768px) {
-        font-size: 8vw;
+        font-size: 7vw;
         text-align: center;
         text-shadow: 
          0px  0px 15px rgba(0, 0, 0, 0.7),
@@ -67,7 +72,7 @@ const HeroSubheader = styled.h2`
     text-shadow: -3px 10px 40px black;
 
     @media (max-width: 768px) {
-        font-size: 6vw;
+        font-size: 5vw;
         text-align: center;
         text-shadow: 
          0px  0px 15px rgba(0, 0, 0, 0.7),

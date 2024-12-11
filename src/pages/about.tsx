@@ -13,7 +13,12 @@ const Container = styled.div`
     }
 
     @media (max-width: 768px) {
-        height: 100vh; /* Adjust height for smaller screens */
+        height: 28vh; /* Increase height */
+        margin: 0; /* Remove unnecessary margins */
+        padding: 0; /* Remove unnecessary padding */
+        video {
+            height: 100%; /* Ensure video fully fills */
+        }
     }
 `;
 
@@ -50,6 +55,7 @@ const HeroContentContainer = styled.div`
         width: 90vw; /* Adjust width for mobile */
         padding: 16px;
     }
+        
 `;
 
 // Hero Header Styles
@@ -59,10 +65,18 @@ const HeroHeader = styled.h1`
     font-size: 5vw;
     margin: 10px 0;
     text-shadow: -3px 10px 30px black;
+    
 
     @media (max-width: 768px) {
         text-align: center; /* Center-align for smaller screens */
-        font-size: 9vw; /* Adjust font size for smaller screens */
+        font-size: 8vw; /* Adjust font size for smaller screens */
+         text-shadow: 
+         0px  0px 15px rgba(0, 0, 0, 0.7),
+         0px  0px 35px rgba(0, 0, 0, 0.8),
+         0px  0px 40px rgba(0, 0, 0, 0.9),
+         0px  0px 25px rgba(0, 0, 0, 0.7),
+         0px  0px 30px rgba(0, 0, 0, 0.8),
+         0px  0px 45px rgba(0, 0, 0, 0.9);
     }
 `;
 
@@ -77,8 +91,15 @@ const HeroSubheader = styled.h2`
     text-shadow: -3px 10px 30px black;
 
     @media (max-width: 768px) {
-        font-size: 6vw; /* Adjust font size for mobile */
+        font-size: 5vw; /* Adjust font size for mobile */
         text-align: center; /* Center-align for smaller screens */
+         text-shadow: 
+         0px  0px 15px rgba(0, 0, 0, 0.7),
+         0px  0px 35px rgba(0, 0, 0, 0.8),
+         0px  0px 40px rgba(0, 0, 0, 0.9),
+         0px  0px 25px rgba(0, 0, 0, 0.7),
+         0px  0px 30px rgba(0, 0, 0, 0.8),
+         0px  0px 45px rgba(0, 0, 0, 0.9);
     }
 `;
 
@@ -94,7 +115,7 @@ const TrusteeName = styled.h3`
     font-weight: 600;
     color: #4d4d4d;
     @media (max-width: 768px) {
-        font-size: 3vw; /* Adjust font size for mobile */
+        font-size: 4vw; /* Adjust font size for mobile */
     }
 `;
 
@@ -111,6 +132,12 @@ const TrusteeImage = styled.img`
     width: 150px;
     height: 150px;
     border-radius: 50%;
+      @media (max-width: 768px) {
+         width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        
+    }
 `;
 
 // Trustee Info Container Styles
@@ -142,18 +169,18 @@ const TrusteeDetails = styled.div`
     }
     @media (max-width: 768px) {
     h3 {
-        font-size: 4vw;
+        font-size: 6vw;
         font-weight: 600;
         color: #1e3a8a;
     }
 
     h4 {
-        font-size: 3vw;
+        font-size: 5vw;
         color: #6b7280;
     }
 
     p {
-        font-size: 2vw;
+        font-size: 4vw;
         color: #4d4d4d;
     }
     }
@@ -183,7 +210,7 @@ export function About() {
                     margin: "50px 0px 0px 0px", /* Adjust padding for mobile */
         }}
                     >
-            <ContentTitle>Board of Trustees</ContentTitle>
+            <ContentTitle data-aos="fade-up">Board of Trustees</ContentTitle>
             <div
                 style={{
                     position: "relative",
@@ -225,7 +252,7 @@ export function About() {
                         gap: "50px",
                     }}
                 >
-                <ContentTitle>Management</ContentTitle>
+                <ContentTitle data-aos="fade-up">Management</ContentTitle>
 
                     {/* Walter Ortner */}
                     <TrusteeInfoContainer>
