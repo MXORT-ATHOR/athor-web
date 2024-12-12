@@ -99,7 +99,7 @@ const HeroSubheader = styled.h2`
 
 const SectionContainer = styled.div`
     position: relative;
-    padding: 80px 20px; /* Adjust padding for mobile */
+    padding: 50px 20px; /* Adjust padding for mobile */
 `;
 
 const ContentWrapper = styled.div`
@@ -107,7 +107,7 @@ const ContentWrapper = styled.div`
     margin-bottom: 20px;
     text-align: center;
      @media (max-width: 768px) {
-        margin-top: 10px;
+        margin-top: 5px;
         max-width: 50%;
     }
 `;
@@ -116,6 +116,10 @@ const SectionTitle = styled.h3`
     font-size: 2.6vw;
     font-weight: 600;
     color: #4D4D4D;
+    @media (max-width: 768px) {
+        font-size: 4vw;
+
+    }
 `;
 
 const SectionText = styled.p`
@@ -124,12 +128,12 @@ const SectionText = styled.p`
     font-family: 'Spline Sans', sans-serif;
     color: #717171;
      @media (max-width: 768px) {
-        font-size: 2vw;
+        font-size: 2.5vw;
 
     }
 `;
 const Image = styled.img`
-    height: 90px;
+    height: 80px;
 
     
 `;
@@ -141,15 +145,16 @@ const MapContainer = styled.div`
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
-    right: -30vw;
+    right: -35vw;
     top: 3vw;
     bottom: -20vw;
     @media (max-width: 768px) {
     top: 3vw;
     bottom: -20vw;
 
-        height: 60%; /* Reduce size on smaller screens */
-        margin-right: -30px; /* Add space to prevent overlap */
+        height: 50%; /* Reduce size on smaller screens */
+        margin-right: -20px; /* Add space to prevent overlap */
+        margin-top: 45px;
     }
 `;
 
