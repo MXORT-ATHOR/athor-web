@@ -114,6 +114,7 @@ const Impressum = () => {
       address: "160 Robinson Road, #14-04, Business Federation Center, 068914 Singapore",
       email: "mo.sg@athor.org",
       companyRegisterSingapore: "UEN 202438497W",
+      lei:"529900MRCO84K2IYDK85",
     },
   ];
 
