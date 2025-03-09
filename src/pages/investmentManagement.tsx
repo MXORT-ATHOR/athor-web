@@ -10,10 +10,12 @@ const Container = styled.div`
         width: 100%;
         height: 100%;
     }
-       @media (max-width: 768px) {
-        height: 28vh; /* Increase height */
+
+    @media (max-width: 768px) {
+        height: 60vh; /* Full height for phones */
         margin: 0; /* Remove unnecessary margins */
         padding: 0; /* Remove unnecessary padding */
+        
         video {
             height: 100%; /* Ensure video fully fills */
         }
@@ -23,34 +25,37 @@ const Container = styled.div`
 const HeroContentContainer = styled.div`
     position: absolute;
     top: 0;
-    right: 0;
     bottom: 0;
-    left: 0;
+    width: 50vw;
     padding: 24px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    text-align: center;
 
     @media (max-width: 768px) {
-        width: 90vw;
+        width: 90vw; /* Expand width for smaller screens */
         padding: 16px;
-        align-items: center;
+        align-items: center; /* Center-align for mobile */
         text-align: center;
     }
 `;
 
 const HeroHeader = styled.h1`
+    text-align: left;
     color: white;
     font-weight: 500;
-    font-size: 4vw;
+    font-size: clamp(2rem, 4vw, 3.5rem); /* Dynamic scaling for text */
     margin: 10px 0;
-    text-align: center;
-    text-shadow: -3px 10px 40px rgba(0, 0, 0, 0.7);
+    text-shadow: 
+         0px  0px 15px rgba(0, 0, 0, 0.7),
+         0px  0px 35px rgba(0, 0, 0, 0.8),
+         0px  0px 40px rgba(0, 0, 0, 0.9),
+         0px  0px 25px rgba(0, 0, 0, 0.7),
+         0px  0px 30px rgba(0, 0, 0, 0.8),
+         0px  0px 45px rgba(0, 0, 0, 0.9);
+
     @media (max-width: 768px) {
-        font-size: 7vw;
+        font-size: 8vw;
         text-align: center;
         text-shadow: 
          0px  0px 15px rgba(0, 0, 0, 0.7),
@@ -63,16 +68,22 @@ const HeroHeader = styled.h1`
 `;
 
 const HeroSubheader = styled.h2`
+    text-align: left;
     color: white;
     font-family: 'Spline Sans', sans-serif;
-    font-size: 2vw;
-    font-weight: 400;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-weight: 300;
     margin: 10px 0;
-    text-align: center;
-    text-shadow: -3px 10px 20px rgba(0, 0, 0, 0.5);
-    max-width: 50vw;
+    text-shadow: 
+         0px  0px 15px rgba(0, 0, 0, 0.7),
+         0px  0px 35px rgba(0, 0, 0, 0.8),
+         0px  0px 40px rgba(0, 0, 0, 0.9),
+         0px  0px 25px rgba(0, 0, 0, 0.7),
+         0px  0px 30px rgba(0, 0, 0, 0.8),
+         0px  0px 45px rgba(0, 0, 0, 0.9);
+
     @media (max-width: 768px) {
-        font-size: 4vw;
+        font-size: 6vw;
         text-align: center;
         text-shadow: 
          0px  0px 15px rgba(0, 0, 0, 0.7),
@@ -100,24 +111,15 @@ const ContentContainer = styled.div`
     }
 
     @media (max-width: 768px) {
-    > img {
-      width: 60vw;
-      margin-top: 20px;
-      aspect-ratio: 2 / 1;
-      border-radius: 12px;
-    }
-        flex-direction: row; /* Ensure left-right layout on smaller screens */
-        justify-content: center;
-        padding: 10px 10px 10px 10px;
-        text-align: center;
-
+        justify-content: center; /* Center the content */
+        flex-direction: column; /* Stack content vertically */
+        padding: 20px;
+        
         > img {
-            order: 1; /* Ensure the image stays on the left */
-            margin-right: 20px;
-        }
-
-        > div {
-            order: 2; /* Ensure the text stays on the right */
+            width: 80vw; /* Increase image width on mobile */
+            aspect-ratio: 2 / 1;
+            border-radius: 12px;
+            margin-bottom: 20px; /* Add margin between image and text */
         }
     }
 `;
@@ -127,8 +129,11 @@ const ContentTitle = styled.h2`
     font-size: 2.5vw;
     font-weight: 500;
     margin: 10px 0;
+    text-align: center; /* Center align the title */
+    
     @media (max-width: 768px) {
-        font-size: 26px; /* Smaller font size for smaller screens */
+        font-size: 26px; /* Increase font size for mobile */
+        text-align: center; /* Center-align for mobile */
     }
 `;
 
@@ -138,34 +143,33 @@ const ContentText = styled.p`
     font-size: 1.2vw;
     font-weight: 300;
     max-width: 30vw;
+    text-align: center; /* Center-align the text */
 
     @media (max-width: 768px) {
-        width: 100%; /* Full width for smaller screens */
-        font-size: 13px; /* Slightly smaller font size */
+        font-size: 18px; /* Increase font size for mobile */
         max-width: 80vw;
-
     }
 `;
 
 const IconContainer = styled.div`
     display: flex;
     gap: 16px;
-
+    justify-content: center; /* Center-align the icons */
+    
     img {
         height: 80px;
         object-fit: contain;
     }
-        
 `;
 
 export function InvestmentManagement() {
     return (
         <div>
-             <Container data-aos="fade-up">
+            <Container data-aos="fade-up">
                 <video src="/invma/hero.mp4" autoPlay loop muted />
                 <HeroContentContainer>
                     <HeroHeader>
-                        Managing a Global<br/>
+                        Managing a Global<br />
                         Multi-Asset Portfolio
                     </HeroHeader>
                     <HeroSubheader>

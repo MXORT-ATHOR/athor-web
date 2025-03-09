@@ -1,4 +1,23 @@
+import { useState, useEffect } from "react";
 import styled from "styled-components";
+
+const heroData = [
+    {
+        header: "Expertise in Pan-Eurasian Trading and Trade-Finance",
+        subheader:
+            "Our international trading structure combines years of experience within the trade, distribution, and financing of commodities.",
+    },
+    {
+        header: "Managing a Global Multi-Asset Portfolio",
+        subheader:
+            "Our four distinct hubs comprise the management of a diversified portfolio across all major asset classes with a clear regional focus in Europe and Asia.",
+    },
+    {
+        header: "Real Assets as a Safe Haven for Generations",
+        subheader:
+            "Our Investment Philosophy places great importance on the areas of Real Estate, Commodities, and Alternative Assets as a key factor for our portfolio’s longevity.",
+    },
+];
 
 const Container = styled.div`
     width: 100vw;
@@ -10,38 +29,36 @@ const Container = styled.div`
         width: 100%;
         height: 100%;
     }
-        @media (max-width: 768px) {
-    height: 28vh; /* Increase height */
-    margin: 0; /* Remove unnecessary margins */
-    padding: 0; /* Remove unnecessary padding */
-    video {
-        height: 100%; /* Ensure video fully fills */
+    @media (max-width: 768px) {
+        height: 60vh;
+        margin: 0;
+        padding: 0;
+        video {
+            height: 100%;
+        }
+        HeroContentContainer {
+            display: none;
+        }
     }
-    HeroContentContainer {
-        display: none; /* Remove empty container if unused */
-    }
-}
-
 `;
-
 
 const HeroContentContainer = styled.div`
     position: absolute;
     top: 0;
-    left: 0;
     bottom: 0;
-    width: 70vw;
-    padding: 24px 80px;
+    width: 60vw;
+    padding: 24px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    overflow: hidden;
+    align-items: flex-end;
 
     @media (max-width: 768px) {
-        width: 90vw;
-        padding: 16px 40px;
-    }
-`;
+        width: 90vw; /* Expand width for smaller screens */
+        padding: 16px;
+        align-items: center; /* Center-align for mobile */
+        text-align: center;
+    }`
 
 const HeroHeader = styled.h1`
     color: white;
@@ -51,7 +68,15 @@ const HeroHeader = styled.h1`
     text-shadow: -3px 10px 30px black;
 
     @media (max-width: 768px) {
-        font-size: 7vw;
+        font-size: 8vw;
+        text-align: center;
+        text-shadow: 
+         0px  0px 15px rgba(0, 0, 0, 0.7),
+         0px  0px 35px rgba(0, 0, 0, 0.8),
+         0px  0px 40px rgba(0, 0, 0, 0.9),
+         0px  0px 25px rgba(0, 0, 0, 0.7),
+         0px  0px 30px rgba(0, 0, 0, 0.8),
+         0px  0px 45px rgba(0, 0, 0, 0.9);
     }
 `;
 
@@ -64,8 +89,16 @@ const HeroSubheader = styled.h2`
     margin: 10px 0;
     text-shadow: -3px 10px 30px black;
 
-    @media (max-width: 768px) {
-        font-size: 5vw;
+   @media (max-width: 768px) {
+        font-size: 6vw;
+        text-align: center;
+        text-shadow: 
+         0px  0px 15px rgba(0, 0, 0, 0.7),
+         0px  0px 35px rgba(0, 0, 0, 0.8),
+         0px  0px 40px rgba(0, 0, 0, 0.9),
+         0px  0px 25px rgba(0, 0, 0, 0.7),
+         0px  0px 30px rgba(0, 0, 0, 0.8),
+         0px  0px 45px rgba(0, 0, 0, 0.9);
     }
 `;
 
@@ -75,7 +108,7 @@ const ContentContainer = styled.div`
 
     @media (max-width: 768px) {
         padding: 40px 20px;
-        font-size: 14px;
+        font-size: 5vw;
     }
 `;
 
@@ -89,7 +122,6 @@ const ContentTitle = styled.h2`
 
     @media (max-width: 768px) {
         font-size: 40px;
-
         margin: 10px 20px;
     }
 `;
@@ -100,9 +132,9 @@ const ImageCountry = styled.div<{
     background: url(${(props) => props.imgUrl});
     background-size: cover;
     background-position: center;
-    aspect-ratio: 3 / 2; /* Default aspect ratio for desktop */
-    flex-shrink: 0; /* Prevent shrinking when inline */
-    width: calc(33.33% - 16px); /* Ensure three items fit inline with a gap */
+    aspect-ratio: 3 / 2;
+    flex-shrink: 0;
+    width: calc(33.33% - 16px);
 
     h4 {
         color: white;
@@ -114,8 +146,8 @@ const ImageCountry = styled.div<{
     }
 
     @media (max-width: 768px) {
-        aspect-ratio: 1 / 1; /* Square aspect ratio for mobile */
-        width: calc(100% / 3 - 16px); /* Fit three images inline */
+        aspect-ratio: 1 / 1;
+        width: calc(100% / 3 - 16px);
         h4 {
             font-size: 18px;
             margin: 10px 10px;
@@ -123,8 +155,17 @@ const ImageCountry = styled.div<{
     }
 `;
 
-
 export function Home() {
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % heroData.length);
+        }, 8000); // 8 seconds
+
+        return () => clearInterval(interval);
+    }, []);
+
     return (
         <div>
             <Container data-aos="fade-up">
@@ -132,20 +173,20 @@ export function Home() {
                     <source src="/homas/home.mp4" type="video/mp4" />
                 </video>
                 <HeroContentContainer>
+                    <div>
+                        <HeroHeader>{heroData[currentIndex].header}</HeroHeader>
+                        <HeroSubheader>{heroData[currentIndex].subheader}</HeroSubheader>
+                    </div>
                 </HeroContentContainer>
             </Container>
 
-            <ContentContainer data-aos="fade-up"
-               
-            >
-                <p
-                    style={{ fontWeight: "400", textAlign: "center"}}
-                >
+            <ContentContainer data-aos="fade-up">
+                <p style={{ fontWeight: "400", textAlign: "center" }}>
                     With expertise in international trade as the pillar of our business, the Athor Group positions itself as a multi-regional investment office working within our close network of trusted business partners in Europe and Asia Pacific
                 </p>
             </ContentContainer>
 
-            <div style={{backgroundColor: "#ababab", height: 1, margin: "0 80px"}}></div>
+            <div style={{ backgroundColor: "#ababab", height: 1, margin: "0 80px" }}></div>
 
             <ContentContainer>
                 <div

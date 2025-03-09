@@ -12,13 +12,13 @@ const Container = styled.div`
         height: 100%;
     }
 
-    @media (max-width: 768px) {
-        height: 28vh; /* Increase height */
-        margin: 0; /* Remove unnecessary margins */
-        padding: 0; /* Remove unnecessary padding */
-        video {
-            height: 100%; /* Ensure video fully fills */
-        }
+       @media (max-width: 768px) {
+            height:60vh; /* Full height for phones */
+            margin: 0; /* Remove unnecessary margins */
+            padding: 0; /* Remove unnecessary padding */
+            
+            video {
+                height: 100%; /* Ensure video fully fills */
     }
 `;
 
@@ -91,7 +91,7 @@ const HeroSubheader = styled.h2`
     text-shadow: -3px 10px 30px black;
 
     @media (max-width: 768px) {
-        font-size: 5vw; /* Adjust font size for mobile */
+        font-size: 6vw; /* Adjust font size for mobile */
         text-align: center; /* Center-align for smaller screens */
          text-shadow: 
          0px  0px 15px rgba(0, 0, 0, 0.7),
@@ -101,15 +101,14 @@ const HeroSubheader = styled.h2`
          0px  0px 30px rgba(0, 0, 0, 0.8),
          0px  0px 45px rgba(0, 0, 0, 0.9);
     }
-`;
-
-// Trustee Cards Styles
+`;// Trustee Cards Styles
 const TrusteeCard = styled.div`
     max-width: 25vw;
     text-align: center;
     flex: 1 1 100%; /* Make the items stack on smaller screens */
 `;
 
+// Trustee Name Styles
 const TrusteeName = styled.h3`
     font-size: 2vw;
     font-weight: 600;
@@ -119,6 +118,7 @@ const TrusteeName = styled.h3`
     }
 `;
 
+// Trustee Description Styles
 const TrusteeDescription = styled.p`
     font-size: 1vw;
     color: #4d4d4d;
@@ -132,11 +132,10 @@ const TrusteeImage = styled.img`
     width: 150px;
     height: 150px;
     border-radius: 50%;
-      @media (max-width: 768px) {
-         width: 80px;
+    @media (max-width: 768px) {
+        width: 80px;
         height: 80px;
         border-radius: 50%;
-        
     }
 `;
 
@@ -149,6 +148,13 @@ const TrusteeInfoContainer = styled.div`
     background-color: #f7f7f7;
     flex-direction: row;
     gap: 20px;
+    
+    @media (max-width: 768px) {
+        padding: 10px; /* Adjust padding for mobile */
+        gap: 15px; /* Adjust gap for mobile */
+        flex-direction: column; /* Stack vertically on mobile */
+        text-align: center; /* Center align text on mobile */
+    }
 `;
 
 const TrusteeDetails = styled.div`
@@ -167,23 +173,25 @@ const TrusteeDetails = styled.div`
         font-size: 1vw;
         color: #4d4d4d;
     }
+
     @media (max-width: 768px) {
-    h3 {
-        font-size: 6vw;
-        font-weight: 600;
-        color: #1e3a8a;
+        h3 {
+            font-size: 6vw;
+            font-weight: 600;
+            color: #1e3a8a;
+        }
+
+        h4 {
+            font-size: 5vw;
+            color: #6b7280;
+        }
+
+        p {
+            font-size: 4vw;
+            color: #4d4d4d;
+        }
     }
 
-    h4 {
-        font-size: 5vw;
-        color: #6b7280;
-    }
-
-    p {
-        font-size: 4vw;
-        color: #4d4d4d;
-    }
-    }
 `;
 
 // Main Component

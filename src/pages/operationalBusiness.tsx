@@ -12,13 +12,14 @@ const Container = styled.div`
     }
 
     @media (max-width: 768px) {
-        height: 28vh; /* Increase height */
-        margin: 0; /* Remove unnecessary margins */
-        padding: 0; /* Remove unnecessary padding */
-        video {
-            height: 100%; /* Ensure video fully fills */
-        }
+    height: 60vh; /* Full height for phones */
+    margin: 0; /* Remove unnecessary margins */
+    padding: 0; /* Remove unnecessary padding */
+    
+    video {
+        height: 100%; /* Ensure video fully fills */
     }
+}
 `;
 
 const HeroContentContainer = styled.div`
@@ -26,7 +27,7 @@ const HeroContentContainer = styled.div`
     top: 0;
     right: 0;
     bottom: 0;
-    width: 50vw;
+    width: 90vw;
     padding: 24px;
     display: flex;
     flex-direction: column;
@@ -50,7 +51,7 @@ const HeroHeader = styled.h1`
     text-shadow: -3px 10px 40px black;
 
       @media (max-width: 768px) {
-        font-size: 7vw;
+        font-size: 8vw;
         text-align: center;
         text-shadow: 
          0px  0px 15px rgba(0, 0, 0, 0.7),
@@ -72,7 +73,7 @@ const HeroSubheader = styled.h2`
     text-shadow: -3px 10px 40px black;
 
     @media (max-width: 768px) {
-        font-size: 5vw;
+        font-size: 6vw;
         text-align: center;
         text-shadow: 
          0px  0px 15px rgba(0, 0, 0, 0.7),
@@ -87,17 +88,40 @@ const HeroSubheader = styled.h2`
 const ContentContainer = styled.div`
     padding: 100px 40px;
     display: flex;
+    flex-direction: column; /* Stack text and logos */
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     gap: 20px; /* Add spacing between items */
     border-bottom: 1px solid #ababab;
 
     @media (max-width: 768px) {
-        flex-direction: column; /* Stack elements on smaller screens */
         padding: 40px 20px;
-        text-align: center; /* Center-align content for mobile */
+        text-align: center; /* Center-align text */
     }
 `;
+
+const LogoContainer = styled.div`
+    display: flex;
+    justify-content: center; /* Center logos */
+    align-items: center;
+    gap: 20px; /* Space between logos */
+    width: 100%;
+    flex-wrap: wrap; /* Ensure responsiveness */
+
+    img {
+        width: 120px; /* Default logo size */
+        height: auto;
+    }
+
+    @media (max-width: 768px) {
+        gap: 10px;
+        
+        img {
+            width: 100px; /* Smaller logo size for mobile */
+        }
+    }
+`;
+
 
 const ContentTitle = styled.h2`
     color: #202124;
@@ -106,7 +130,7 @@ const ContentTitle = styled.h2`
     margin: 10px 0;
 
     @media (max-width: 768px) {
-        font-size: clamp(1.2rem, 4vw, 1.6rem);
+        font-size: clamp(1.2rem, 5vw, 1.6rem);
     }
 `;
 
@@ -119,7 +143,7 @@ const ContentText = styled.p`
 
     @media (max-width: 768px) {
                 width: 100%; /* Full width for smaller screens */
-        font-size: 14px; /* Slightly smaller font size */
+        font-size: 16px; /* Slightly smaller font size */
     }
 `;
 
@@ -177,15 +201,13 @@ export function OperationBusiness() {
                         solution for purchasing, distribution and logistics to and from Europe.
                     </ContentText>
                 </div>
-                <ImageContainer>
+                <LogoContainer>
                     <img src="/opbus/rmz.png" width={200} alt="RMZ - Austria" />
                     <img src="/opbus/powerline.png" width={400} alt="Powerline" />
-                </ImageContainer>
+                </LogoContainer>
             </ContentContainer>
             <ContentContainer data-aos="fade-up" data-aos-offset="400" data-aos-easing="ease-in">
-                <ImageContainer>
-                    <img src="/opbus/fininvest.png" width={400} alt="Financial Investment Group" />
-                </ImageContainer>
+               
                 <div>
                     <ContentTitle>Trade Finance</ContentTitle>
                     <ContentText>
@@ -194,6 +216,9 @@ export function OperationBusiness() {
                         financing needs.
                     </ContentText>
                 </div>
+                <LogoContainer>
+                    <img src="/opbus/fininvest.png" width={400} alt="Financial Investment Group" />
+                </LogoContainer>
             </ContentContainer>
             <ContentContainer data-aos="fade-up" data-aos-offset="400" data-aos-easing="ease-in">
                 <div>
@@ -204,10 +229,10 @@ export function OperationBusiness() {
                         homologations, and distributions.
                     </ContentText>
                 </div>
-                <ImageContainer>
+                <LogoContainer>
                     <img src="/opbus/athorhandel.png" width={270} alt="Athor Handel" />
                     <img src="/opbus/athorswitz.png" width={270} alt="Athor Switzerland" />
-                </ImageContainer>
+                </LogoContainer>
             </ContentContainer>
         </div>
     );
