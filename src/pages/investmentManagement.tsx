@@ -197,7 +197,7 @@ export function InvestmentManagement() {
                 <div>
                     <ContentTitle>Singapore</ContentTitle>
                     <ContentText>
-                        Our Singapore branch was created with the intention of diversifying our portfolio across Asia-Pacific, focusing on equity investments in both developed and emerging markets.
+                        Our Singapore branch was created with the intention of diversifying our operational business within the international trading space in both developed and emerging markets.
                     </ContentText>
                     <IconContainer>
                         <img src="athor/sglim.png" alt="SG Lim" />
