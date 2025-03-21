@@ -296,9 +296,9 @@ export function About() {
                         <TrusteeImage src="abot/max.png" alt="Maximilian Ortner" />
                         <TrusteeDetails>
                             <h3>Maximilian Ortner</h3>
-                            <h4>Managing Director - Athor Real GmbH</h4>
+                            <h4>Managing Director - Athor SG Pte. Ltd. & Athor Real GmbH</h4>
                             <p>
-                                Maximilian is an experienced asset manager with a strong focus on Public Markets and Venture Capital. He has been active within the Fintech and Venture Capital space working for Germany’s biggest Fintech Bank N26 before transitioning into the Wealth Management space at UBS. He holds a MSc in Venture Creation from the National University of Singapore and BSc in Management from ESCP Business School.
+                                Maximilian is an experienced manager in the international trading space with a clear focus on steel and commodity products. He holds a MSc in Venture Creation from the National University of Singapore and BSc in Management from ESCP Business School.
                             </p>
                         </TrusteeDetails>
                     </TrusteeInfoContainer>
